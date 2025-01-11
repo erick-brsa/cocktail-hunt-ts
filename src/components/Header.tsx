@@ -44,7 +44,7 @@ export default function Header() {
 		<header
 			className={isHome ? 'bg-header bg-center bg-cover' : 'bg-slate-800'}
 		>
-			<div className="mx-auto container px-5 py-16">
+			<div className="mx-auto container px-5 py-16 max-w-7xl">
 				<div className="flex justify-between items-center">
 					<div className="">
 						<img src="/logo.svg" alt="Logotipo" className="w-32" />

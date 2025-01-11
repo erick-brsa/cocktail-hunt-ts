@@ -1,6 +1,8 @@
 import { z } from "zod";
-import { CategoriesAPIRespondeSchema, SearchFilterSchema } from "../schemas/recipes-schema";
+import { CategoriesAPIRespondeSchema, DrinkAPIResponse, DrinksAPIResponse, SearchFilterSchema } from "../schemas/recipes-schema";
 
 // export type Category = { strCategory: string; }
 export type Categories = z.infer<typeof CategoriesAPIRespondeSchema>;
 export type SearchFilter = z.infer<typeof SearchFilterSchema>;
+export type Drinks = z.infer<typeof DrinksAPIResponse>;
+export type Drink = z.infer<typeof DrinkAPIResponse>;

@@ -31,13 +31,10 @@ export default function Header() {
 
 		// Validar
 		if (Object.values(searchFilters).includes('')) {
-			console.log('Todos los campos son obligatorios');
 			return;
 		}
 
-		searchRecipes(searchFilters);
-		console.log(searchFilters);
-		
+		searchRecipes(searchFilters);		
 	};
 
 	return (

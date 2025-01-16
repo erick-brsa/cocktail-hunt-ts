@@ -4,17 +4,18 @@ import { useAppStore } from '../stores/useAppStore';
 
 export default function Header() {
 
-	useEffect(() => {
-		fetchCategories();
-	}, []);
-	
+	const { showNotification} = useAppStore();
 	const { pathname } = useLocation();
-
+	
 	const [searchFilters, setSearchFilters] = useState({
 		ingredient: '',
 		category: ''
 	})
-
+	
+	useEffect(() => {
+		fetchCategories();
+	}, []);
+	
 	const isHome = useMemo(() => pathname === '/', [pathname]);
 
 	const { fetchCategories, searchRecipes, categories } = useAppStore();
@@ -31,6 +32,10 @@ export default function Header() {
 
 		// Validar
 		if (Object.values(searchFilters).includes('')) {
+			showNotification({
+				text: 'Todos los campos son obligatorios',
+				error: true
+			})
 			return;
 		}
 
